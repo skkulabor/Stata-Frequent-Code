@@ -65,31 +65,6 @@ label define region_k
 label values region region_k
 ```
 
-#### 일련번호로 된 지역 코드를 한글 지명으로 레이블
-```stata
-#delimit ;
-label define region_k
-1 "서울" 
-2 "부산" 
-3 "대구" 
-4 "인천" 
-5 "광주" 
-6 "대전" 
-7 "울산" 
-8 "경기"
-9 "강원" 
-10 "충북" 
-11 "충남" 
-12 "전북" 
-13 "전남" 
-14 "경북" 
-15 "경남" 
-16 "제주"
-;
-#delimit cr
-
-label values region region_k
-```
 
 #### 일련번호로 된 지역 코드를 한글 지명으로 레이블
 ```stata
@@ -142,6 +117,32 @@ label define region_e
 
 label values region region_e
 ```
+
+#### 통계청이 사용하는 지역 코드를 영문 지명으로 레이블
+```stata
+#delimit ;
+label define region_e
+11	"Seoul"
+21	"Busan"
+22	"Daegu"
+23	"Incheon"
+24	"Gwangju"
+25	"Daejeon"
+26	"Ulsan"
+31	"Gyeonggi"
+32	"Gangwon"
+33	"Choongbuk"
+34	"Choongnam"
+35	"Geonbuk"
+36	"Geonnam"
+37	"Gyeongbuk"
+38	"Gyeongnam"
+39	"Jeju"
+;
+#delimit cr
+label values region region_e
+```
+
 
 #### 대도시 지역을 나타내는 더미 변수 만들기
 ```stata
