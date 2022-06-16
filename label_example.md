@@ -122,9 +122,9 @@ label values region region_k
 #delimit ;
 label define region_e
 1 "Gangwon"
-2 "Kyungki"
-3 "Kyungnam"
-4 "Kyungbuk"
+2 "Gyeonggi"
+3 "Gyungnam"
+4 "Gyungbuk"
 5 "Gwangju"
 6 "Daegu"
 7 "Daejeon"
@@ -142,6 +142,31 @@ label define region_e
 
 label values region region_e
 ```
+
+```stata
+#delimit ;
+label define region_e
+11	"Seoul"
+21	"Busan"
+22	"Daegu"
+23	"Incheon"
+24	"Gwangju"
+25	"Daejeon"
+26	"Ulsan"
+31	"Gyeonggi"
+32	"Gangwon"
+33	"Choongbuk"
+34	"Choongnam"
+35	"Geonbuk"
+36	"Geonnam"
+37	"Gyeongbuk"
+38	"Gyeongnam"
+39	"Jeju"
+;
+#delimit cr
+label values region region_e
+```
+
 
 #### 대도시 지역을 나타내는 더미 변수 만들기
 ```stata
