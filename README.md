@@ -37,7 +37,7 @@ unicode translate *, invalid
 
 
 ### 그래프 그리기
-- [**Sample code for Stata introduction**](https://github.com/jaesungc/Stata-Frequent-Code/blob/master/graph_example.do)
+- [**Sample code for Stata introduction**](https://github.com/skkulabor/Stata-Frequent-Code/blob/master/graph_example.do)
 - [**Connected line**](https://github.com/jaesungc/Stata-Frequent-Code/blob/master/Graph_Connected%20line.do)
 - [**Stacked bar**](https://github.com/jaesungc/Stata-Frequent-Code/blob/master/Graph_Stacked%20bar.md)
 - [**Kernel density**](https://github.com/jaesungc/Stata-Frequent-Code/blob/master/kdensity_ex.do)
