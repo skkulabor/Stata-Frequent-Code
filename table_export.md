@@ -8,7 +8,33 @@ ssc install outreg2
 ssc install xml_tab
 ```
 
-<Br>
+<br>
+
+### Exporting Summary Statistics
+
+```stata
+eststo clear
+estpost sum price mpg weight length
+esttab using summary.csv, cells("count(fmt(0)) mean(fmt(2)) sd(fmt(2)) min(fmt(1)) max(fmt(0))") nomtitle nonumber replace
+
+eststo clear
+bys foreign: eststo: estpost sum price mpg weight length
+esttab using summary.csv, cells("count(fmt(0)) mean(fmt(2)) sd(fmt(2)) min(fmt(1)) max(fmt(0))") nomtitle nonumber append
+```
+
+<br>
+
+### Exporting Tabulations
+
+```stata
+eststo clear
+forv i=0/1 {
+	eststo: estpost tab rep78 if foreign==`i'
+	}
+esttab using summary.csv, cells(pct(fmt(1))) noobs append
+```
+
+<br>
 
 ### Exporting Regression Tables
 
@@ -49,30 +75,4 @@ reg price mpg
 outreg2 using table2.xls, replace
 reg price mpg weight
 outreg2 using table2.xls, append
-```
-
-<br>
-
-### Exporting Summary Statistics
-
-```stata
-eststo clear
-estpost sum price mpg weight length
-esttab using summary.csv, cells("count(fmt(0)) mean(fmt(2)) sd(fmt(2)) min(fmt(1)) max(fmt(0))") nomtitle nonumber replace
-
-eststo clear
-bys foreign: eststo: estpost sum price mpg weight length
-esttab using summary.csv, cells("count(fmt(0)) mean(fmt(2)) sd(fmt(2)) min(fmt(1)) max(fmt(0))") nomtitle nonumber append
-```
-
-<br>
-
-#### Exporting Tabulations
-
-```stata
-eststo clear
-forv i=0/1 {
-	eststo: estpost tab rep78 if foreign==`i'
-	}
-esttab using summary.csv, cells(pct(fmt(1))) noobs append
 ```
