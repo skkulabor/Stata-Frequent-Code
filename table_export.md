@@ -78,4 +78,6 @@ reg price mpg
 outreg2 using table2.xls, replace
 reg price mpg weight
 outreg2 using table2.xls, append
+
+outreg2 [*] using table3.xls, replace // Use [] to select stored models
 ```
