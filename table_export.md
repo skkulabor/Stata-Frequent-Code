@@ -13,6 +13,9 @@ ssc install xml_tab
 ### Exporting Summary Statistics
 
 ```stata
+clear
+sysuse auto
+
 eststo clear
 estpost sum price mpg weight length
 esttab using summary.csv, cells("count(fmt(0)) mean(fmt(2)) sd(fmt(2)) min(fmt(1)) max(fmt(0))") nomtitle nonumber replace
